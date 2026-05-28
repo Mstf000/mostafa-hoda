@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">A &amp; B — Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to celebrate our wedding." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&family=Cinzel:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       ENVELOPE INTRO
+       ══════════════════════════════════════ -->
+  <div id="envelope-overlay" role="dialog" aria-modal="true" aria-label="Wedding invitation envelope">
+    <div class="env-scene">
+
+      <div class="env-wrap" id="env-wrap" role="button" tabindex="0" aria-label="Open your invitation">
+        <div class="env-body">
+
+          <!-- Fold-shadow lines create the classic envelope diamond -->
+          <div class="env-fold env-fold-l"></div>
+          <div class="env-fold env-fold-r"></div>
+          <div class="env-fold env-fold-b"></div>
+
+          <!-- Invitation card — sits in the lower portion of the envelope -->
+          <div class="env-inner-card" id="env-inner-card">
+            <p class="env-eyebrow">Wedding Invitation</p>
+            <div class="env-ornament" aria-hidden="true">
+              <span class="env-orn-line"></span>
+              <span class="env-orn-diamond"></span>
+              <span class="env-orn-line"></span>
+            </div>
+            <p class="env-names" id="env-names">Hoda &amp; Mostafa</p>
+            <div class="env-card-rule"></div>
+            <p class="env-date" id="env-date">July 8, 2026</p>
+          </div>
+
+          <!-- Flap — no overflow so seal can sit on top freely -->
+          <div class="env-flap" id="env-flap"></div>
+
+          <!-- Seal is a sibling of the flap so clip-path can't cut it -->
+          <div class="env-seal" id="env-seal" aria-hidden="true">
+            <div class="seal-monogram">
+              <span class="seal-initial">H</span>
+              <span class="seal-dot"></span>
+              <span class="seal-initial">M</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="env-hint" id="env-hint">Tap to open your invitation</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       1. HERO
+       ══════════════════════════════════════ -->
+  <section id="hero">
+    <div id="botanicals" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">You are cordially invited</p>
+      <div class="hero-frame">
+        <div class="hero-frame-tr" aria-hidden="true"></div>
+        <div class="hero-frame-bl" aria-hidden="true"></div>
+        <div class="hero-names">
+          <h1 class="name" id="hero-name-a">Name A</h1>
+          <div class="amp-row" aria-hidden="true">
+            <span class="amp-line"></span>
+            <span class="amp">&amp;</span>
+            <span class="amp-line"></span>
+          </div>
+          <h1 class="name" id="hero-name-b">Name B</h1>
+        </div>
+      </div>
+      <div class="orn" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+      <p class="hero-date" id="hero-date">Month Day, Year</p>
+      <p class="hero-location" id="hero-location">City, Country</p>
+      <p class="hero-tagline">Together, forever</p>
+    </div>
+    <div class="scroll-cue" aria-label="Scroll down">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       2. COUNTDOWN
+       ══════════════════════════════════════ -->
+  <section id="countdown" class="reveal">
+    <p class="section-eyebrow">The moment arrives in</p>
+    <div class="countdown-grid" id="countdown-grid"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       3. DETAILS
+       ══════════════════════════════════════ -->
+  <section id="details" class="reveal">
+    <p class="section-eyebrow">Save the Date</p>
+    <h2 class="section-title">The Details</h2>
+    <div class="orn" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="card-icon-wrap" aria-hidden="true">
+          <svg class="card-svg-icon" viewBox="0 0 40 40" fill="none">
+            <path d="M20 6 C20 6 28 12 28 22 C28 28 24.4 32 20 32 C15.6 32 12 28 12 22 C12 12 20 6 20 6Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <line x1="20" y1="6" x2="20" y2="32" stroke="currentColor" stroke-width=".8"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Date &amp; Time</h3>
+        <div id="wedding-calendar" class="wedding-calendar"></div>
+        <p class="card-time" id="details-time">4:00 PM</p>
+        <p class="card-day"  id="details-day">Saturday</p>
+      </div>
+      <div class="detail-card">
+        <div class="card-icon-wrap" aria-hidden="true">
+          <svg class="card-svg-icon" viewBox="0 0 40 40" fill="none">
+            <path d="M20 8 C14.5 8 10 12.5 10 18 C10 25 20 34 20 34 C20 34 30 25 30 18 C30 12.5 25.5 8 20 8Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            <circle cx="20" cy="18" r="3.5" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </div>
+        <h3 class="card-title">Location</h3>
+        <p class="venue-name" id="details-venue">Venue Name</p>
+        <p class="venue-city" id="details-city">City, Country</p>
+        <a href="#" id="details-map-link" class="map-link" target="_blank" rel="noopener noreferrer">View on Maps ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       4. GALLERY
+       ══════════════════════════════════════ -->
+  <section id="gallery" class="reveal">
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">A Glimpse of Us</h2>
+    <div class="orn" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+    <p class="gallery-intro">Every love story is beautiful — but ours is our favourite.</p>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" data-index="0">
+        <img src="public/photo-1.jpg" alt="The couple" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="1">
+        <img src="public/photo-2.jpg" alt="The couple" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="2">
+        <img src="public/photo-3.jpg" alt="The couple" loading="lazy" />
+      </div>
+      <div class="gallery-item" data-index="3">
+        <img src="public/photo-4.jpg" alt="The couple" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- ══════════════════════════════════════
+       5. MESSAGE
+       ══════════════════════════════════════ -->
+  <section id="message" class="reveal">
+    <div class="message-inner">
+      <div class="quote-deco" aria-hidden="true">&ldquo;</div>
+      <p class="typewriter-text" id="typewriter-text"></p><span class="cursor" id="tw-cursor">|</span>
+      <div class="quote-deco quote-close" aria-hidden="true">&rdquo;</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       6. GUESTBOOK
+       ══════════════════════════════════════ -->
+  <section id="guestbook" class="reveal">
+    <p class="section-eyebrow">Wishes &amp; Words</p>
+    <h2 class="section-title">Leave Your Message</h2>
+    <div class="orn" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+    <p class="section-sub">A few words from you would mean everything to us.</p>
+    <form id="guestbook-form" novalidate>
+      <input  type="text" id="gb-name"    placeholder="Your name"           required autocomplete="name" />
+      <textarea           id="gb-message" placeholder="Write something sweet…" rows="4" required></textarea>
+      <button type="submit" class="btn-primary">Send Your Wishes</button>
+    </form>
+    <p id="gb-feedback" class="gb-feedback" aria-live="polite"></p>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       7. RSVP
+       ══════════════════════════════════════ -->
+  <section id="rsvp" class="reveal">
+    <p class="section-eyebrow">RSVP</p>
+    <h2 class="section-title">Will you celebrate with us?</h2>
+    <div class="orn" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+    <p class="rsvp-sub">We truly hope you can make it. Your presence would be our greatest gift.</p>
+    <div class="rsvp-buttons" id="rsvp-buttons">
+      <button class="btn-yes" id="btn-yes">Joyfully Accept</button>
+      <button class="btn-no"  id="btn-no">Regretfully Decline</button>
+    </div>
+    <p class="rsvp-taunt" id="rsvp-taunt"></p>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       8. EASTER EGG
+       ══════════════════════════════════════ -->
+  <section id="easter" class="reveal">
+    <p class="easter-hint">Psst… tap something special</p>
+    <button class="ring-btn" id="ring-btn" aria-label="Ring easter egg">💍</button>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       9. CLOSING
+       ══════════════════════════════════════ -->
+  <section id="closing">
+    <div class="closing-inner">
+      <div class="orn orn-light" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+      <p class="closing-eyebrow" id="closing-names-top">Name A &amp; Name B</p>
+      <h2 class="closing-headline">would love<br />your presence</h2>
+      <div class="closing-rule" aria-hidden="true"></div>
+      <p class="closing-sub" id="closing-sub">Month Day, Year · City, Country</p>
+      <div class="orn orn-light" aria-hidden="true"><span></span><span class="orn-gem"></span><span></span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       10. FOOTER
+       ══════════════════════════════════════ -->
+  <footer id="footer">
+    <p id="footer-text">Name A &amp; Name B · Month Day, Year · City, Country</p>
+  </footer>
+
+  <!-- Fixed music button -->
+  <button id="music-btn" aria-label="Toggle music" title="Toggle music">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+      <path d="M9 3v10.55A4 4 0 1 0 11 17V7h4V3z"/>
+    </svg>
+  </button>
+  <audio id="bg-music" src="public/song.mp3" loop preload="none"></audio>
+
+  <script src="main.js"></script>
+</body>
+</html>
