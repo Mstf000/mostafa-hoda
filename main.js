@@ -77,66 +77,42 @@ function initBotanicals() {
   });
 }
 
-// ─── FLIP DIGIT CLASS ──────────────────────────────────────────
+// ─── DIGIT CLASS — single clean card, slides up on change ──────
 class FlipDigit {
   constructor() {
     this.el = document.createElement('div');
     this.el.className = 'flip-digit';
-    this.el.innerHTML = `
-      <div class="fd-half fd-top fd-static-top"><span>0</span></div>
-      <div class="fd-half fd-bot fd-static-bot"><span>0</span></div>
-      <div class="fd-half fd-top fd-anim-top"><span>0</span></div>
-      <div class="fd-half fd-bot fd-anim-bot"><span>0</span></div>
-    `;
 
-    this._sTopSpan  = this.el.querySelector('.fd-static-top span');
-    this._sBotSpan  = this.el.querySelector('.fd-static-bot span');
-    this._aTopDiv   = this.el.querySelector('.fd-anim-top');
-    this._aBotDiv   = this.el.querySelector('.fd-anim-bot');
-    this._aTopSpan  = this.el.querySelector('.fd-anim-top span');
-    this._aBotSpan  = this.el.querySelector('.fd-anim-bot span');
+    this._card = document.createElement('div');
+    this._card.className = 'digit-card';
+    this._card.textContent = '0';
+    this.el.appendChild(this._card);
 
-    this._cur  = '0';
+    this._val  = '0';
     this._busy = false;
   }
 
   update(val) {
     val = String(val);
-    if (val === this._cur || this._busy) return;
+    if (val === this._val || this._busy) return;
 
-    const prev   = this._cur;
-    this._cur    = val;
-    this._busy   = true;
+    this._val  = val;
+    this._busy = true;
 
-    // Content for the animated halves
-    this._aTopSpan.textContent = prev; // old value folds away
-    this._aBotSpan.textContent = val;  // new value reveals
-    this._sBotSpan.textContent = val;  // update static bottom immediately (hidden behind anim-bot)
+    const outgoing = this._card;
+    outgoing.classList.add('digit-exit');
 
-    // Reset anim-bot to its default hidden state without triggering CSS transition
-    this._aTopDiv.style.animation = 'none';
-    this._aBotDiv.style.animation = 'none';
-    this._aBotDiv.style.transform = 'rotateX(90deg)';
-    this._aTopDiv.style.transform = 'rotateX(0deg)';
-    void this.el.offsetWidth; // force reflow so we can restart the animation
+    const incoming = document.createElement('div');
+    incoming.className = 'digit-card digit-enter';
+    incoming.textContent = val;
+    this.el.appendChild(incoming);
+    this._card = incoming;
 
-    this._aTopDiv.style.animation = '';
-    this._aBotDiv.style.animation = '';
-    this._aBotDiv.style.transform = '';
-    this._aTopDiv.style.transform = '';
-
-    this.el.classList.add('is-flipping');
-
-    // Midpoint: the fold-away is complete, reveal the updated static top
     setTimeout(() => {
-      this._sTopSpan.textContent = val;
-    }, 260);
-
-    // End: clean up
-    setTimeout(() => {
-      this.el.classList.remove('is-flipping');
+      outgoing.remove();
+      incoming.classList.remove('digit-enter');
       this._busy = false;
-    }, 540);
+    }, 320);
   }
 }
 
@@ -154,7 +130,7 @@ function initCountdown() {
 
   const digitMap = {};
 
-  groups.forEach(g => {
+  groups.forEach((g, idx) => {
     const group = document.createElement('div');
     group.className = 'countdown-group';
 
@@ -175,6 +151,15 @@ function initCountdown() {
     group.appendChild(pair);
     group.appendChild(label);
     container.appendChild(group);
+
+    // Add gold colon separator after every group except the last
+    if (idx < groups.length - 1) {
+      const sep = document.createElement('span');
+      sep.className = 'countdown-sep';
+      sep.setAttribute('aria-hidden', 'true');
+      sep.textContent = ':';
+      container.appendChild(sep);
+    }
   });
 
   function pad2(n) {
