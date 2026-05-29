@@ -18,41 +18,152 @@
   <div id="envelope-overlay" role="dialog" aria-modal="true" aria-label="Wedding invitation envelope">
     <div class="env-scene">
 
+      <!-- env-wrap IS the full-screen envelope -->
       <div class="env-wrap" id="env-wrap" role="button" tabindex="0" aria-label="Open your invitation">
-        <div class="env-body">
 
-          <!-- Fold-shadow lines create the classic envelope diamond -->
-          <div class="env-fold env-fold-l"></div>
-          <div class="env-fold env-fold-r"></div>
-          <div class="env-fold env-fold-b"></div>
+        <!-- Double gold frame border -->
+        <div class="env-outer-frame" aria-hidden="true"></div>
 
-          <!-- Invitation card — sits in the lower portion of the envelope -->
-          <div class="env-inner-card" id="env-inner-card">
-            <p class="env-eyebrow">Wedding Invitation</p>
-            <div class="env-ornament" aria-hidden="true">
-              <span class="env-orn-line"></span>
-              <span class="env-orn-diamond"></span>
-              <span class="env-orn-line"></span>
-            </div>
-            <p class="env-names" id="env-names">Hoda &amp; Mostafa</p>
-            <div class="env-card-rule"></div>
-            <p class="env-date" id="env-date">July 8, 2026</p>
+        <!-- Classic envelope fold-shadow diamond -->
+        <div class="env-fold env-fold-l"></div>
+        <div class="env-fold env-fold-r"></div>
+        <div class="env-fold env-fold-b"></div>
+
+        <!-- ── Gold botanical corner ornaments (body) ── -->
+        <svg class="env-corner env-corner-tl" viewBox="0 0 90 90" fill="none" aria-hidden="true">
+          <path d="M3 28 L3 3 L28 3" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+          <path d="M7 80 C18 58 44 40 74 12" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M16 66 C5 55 7 43 16 46 C25 49 24 61 16 66Z" fill="currentColor" opacity=".35"/>
+          <line x1="16" y1="66" x2="17" y2="47" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M36 48 C44 36 50 28 45 24 C38 21 29 34 36 48Z" fill="currentColor" opacity=".35"/>
+          <line x1="36" y1="48" x2="43" y2="26" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M56 28 C46 18 47 8 55 10 C63 12 63 22 56 28Z" fill="currentColor" opacity=".35"/>
+          <line x1="56" y1="28" x2="56" y2="11" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <circle cx="74" cy="12" r="3"  fill="currentColor" opacity=".55"/>
+          <circle cx="67" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="80" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="82" cy="17" r="1.8" fill="currentColor" opacity=".3"/>
+          <path d="M24 58 C17 50 17 43 22 42" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+          <path d="M44 40 C50 32 52 26 48 22" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+        </svg>
+        <svg class="env-corner env-corner-tr" viewBox="0 0 90 90" fill="none" aria-hidden="true">
+          <path d="M3 28 L3 3 L28 3" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+          <path d="M7 80 C18 58 44 40 74 12" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M16 66 C5 55 7 43 16 46 C25 49 24 61 16 66Z" fill="currentColor" opacity=".35"/>
+          <line x1="16" y1="66" x2="17" y2="47" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M36 48 C44 36 50 28 45 24 C38 21 29 34 36 48Z" fill="currentColor" opacity=".35"/>
+          <line x1="36" y1="48" x2="43" y2="26" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M56 28 C46 18 47 8 55 10 C63 12 63 22 56 28Z" fill="currentColor" opacity=".35"/>
+          <line x1="56" y1="28" x2="56" y2="11" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <circle cx="74" cy="12" r="3"  fill="currentColor" opacity=".55"/>
+          <circle cx="67" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="80" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="82" cy="17" r="1.8" fill="currentColor" opacity=".3"/>
+          <path d="M24 58 C17 50 17 43 22 42" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+          <path d="M44 40 C50 32 52 26 48 22" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+        </svg>
+        <svg class="env-corner env-corner-bl" viewBox="0 0 90 90" fill="none" aria-hidden="true">
+          <path d="M3 28 L3 3 L28 3" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+          <path d="M7 80 C18 58 44 40 74 12" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M16 66 C5 55 7 43 16 46 C25 49 24 61 16 66Z" fill="currentColor" opacity=".35"/>
+          <line x1="16" y1="66" x2="17" y2="47" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M36 48 C44 36 50 28 45 24 C38 21 29 34 36 48Z" fill="currentColor" opacity=".35"/>
+          <line x1="36" y1="48" x2="43" y2="26" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M56 28 C46 18 47 8 55 10 C63 12 63 22 56 28Z" fill="currentColor" opacity=".35"/>
+          <line x1="56" y1="28" x2="56" y2="11" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <circle cx="74" cy="12" r="3"  fill="currentColor" opacity=".55"/>
+          <circle cx="67" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="80" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="82" cy="17" r="1.8" fill="currentColor" opacity=".3"/>
+          <path d="M24 58 C17 50 17 43 22 42" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+          <path d="M44 40 C50 32 52 26 48 22" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+        </svg>
+        <svg class="env-corner env-corner-br" viewBox="0 0 90 90" fill="none" aria-hidden="true">
+          <path d="M3 28 L3 3 L28 3" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+          <path d="M7 80 C18 58 44 40 74 12" stroke="currentColor" stroke-width="1" fill="none"/>
+          <path d="M16 66 C5 55 7 43 16 46 C25 49 24 61 16 66Z" fill="currentColor" opacity=".35"/>
+          <line x1="16" y1="66" x2="17" y2="47" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M36 48 C44 36 50 28 45 24 C38 21 29 34 36 48Z" fill="currentColor" opacity=".35"/>
+          <line x1="36" y1="48" x2="43" y2="26" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <path d="M56 28 C46 18 47 8 55 10 C63 12 63 22 56 28Z" fill="currentColor" opacity=".35"/>
+          <line x1="56" y1="28" x2="56" y2="11" stroke="currentColor" stroke-width=".5" opacity=".5"/>
+          <circle cx="74" cy="12" r="3"  fill="currentColor" opacity=".55"/>
+          <circle cx="67" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="80" cy="5"  r="1.8" fill="currentColor" opacity=".3"/>
+          <circle cx="82" cy="17" r="1.8" fill="currentColor" opacity=".3"/>
+          <path d="M24 58 C17 50 17 43 22 42" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+          <path d="M44 40 C50 32 52 26 48 22" stroke="currentColor" stroke-width=".7" fill="none" opacity=".45"/>
+        </svg>
+
+        <!-- ── Invitation card (rises on open) ── -->
+        <div class="env-inner-card" id="env-inner-card">
+          <p class="env-eyebrow">Wedding Invitation</p>
+          <div class="env-ornament" aria-hidden="true">
+            <span class="env-orn-line"></span>
+            <span class="env-orn-diamond"></span>
+            <span class="env-orn-line"></span>
           </div>
-
-          <!-- Flap — no overflow so seal can sit on top freely -->
-          <div class="env-flap" id="env-flap"></div>
-
-          <!-- Seal is a sibling of the flap so clip-path can't cut it -->
-          <div class="env-seal" id="env-seal" aria-hidden="true">
-            <div class="seal-monogram">
-              <span class="seal-initial">H</span>
-              <span class="seal-dot"></span>
-              <span class="seal-initial">M</span>
-            </div>
-          </div>
-
+          <p class="env-names" id="env-names">Hoda &amp; Mostafa</p>
+          <div class="env-card-rule"></div>
+          <p class="env-date" id="env-date">July 8, 2026</p>
         </div>
-      </div>
+
+        <!-- ── Green flap — botanical sprigs clipped naturally inside ── -->
+        <div class="env-flap" id="env-flap">
+          <!-- Left botanical sprig (white on green) -->
+          <svg class="env-flap-sprig env-flap-sprig-l" viewBox="0 0 120 200" fill="none" aria-hidden="true">
+            <g stroke="rgba(255,255,255,.45)" fill="rgba(255,255,255,.22)" stroke-width=".9">
+              <path d="M20 195 C30 155 55 110 80 55" fill="none" stroke-width="1.1" stroke="rgba(255,255,255,.5)"/>
+              <path d="M28 168 C14 154 16 138 26 142 C38 148 36 162 28 168Z"/>
+              <line x1="28" y1="168" x2="27" y2="143" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M46 128 C58 112 66 96 56 88 C45 83 34 104 46 128Z"/>
+              <line x1="46" y1="128" x2="55" y2="91" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M62 96 C48 78 50 60 62 64 C74 68 73 84 62 96Z"/>
+              <line x1="62" y1="96" x2="63" y2="65" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M80 55 C76 38 82 25 86 34 C90 42 85 52 80 55Z"/>
+              <path d="M80 55 C74 40 76 26 70 28 C66 33 70 47 80 55Z"/>
+              <path d="M36 160 C26 150 24 142 30 140" fill="none" stroke-width=".7"/>
+            </g>
+          </svg>
+          <!-- Right sprig (mirror) -->
+          <svg class="env-flap-sprig env-flap-sprig-r" viewBox="0 0 120 200" fill="none" aria-hidden="true">
+            <g stroke="rgba(255,255,255,.45)" fill="rgba(255,255,255,.22)" stroke-width=".9">
+              <path d="M20 195 C30 155 55 110 80 55" fill="none" stroke-width="1.1" stroke="rgba(255,255,255,.5)"/>
+              <path d="M28 168 C14 154 16 138 26 142 C38 148 36 162 28 168Z"/>
+              <line x1="28" y1="168" x2="27" y2="143" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M46 128 C58 112 66 96 56 88 C45 83 34 104 46 128Z"/>
+              <line x1="46" y1="128" x2="55" y2="91" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M62 96 C48 78 50 60 62 64 C74 68 73 84 62 96Z"/>
+              <line x1="62" y1="96" x2="63" y2="65" stroke="rgba(255,255,255,.35)" stroke-width=".5"/>
+              <path d="M80 55 C76 38 82 25 86 34 C90 42 85 52 80 55Z"/>
+              <path d="M80 55 C74 40 76 26 70 28 C66 33 70 47 80 55Z"/>
+              <path d="M36 160 C26 150 24 142 30 140" fill="none" stroke-width=".7"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- ── Wax seal — lives outside flap, full circle ── -->
+        <div class="env-seal" id="env-seal" aria-hidden="true">
+          <div class="seal-monogram">
+            <span class="seal-initial">H</span>
+            <span class="seal-dot"></span>
+            <span class="seal-initial">M</span>
+          </div>
+        </div>
+
+        <!-- ── Botanical divider below seal ── -->
+        <svg class="env-body-divider" viewBox="0 0 320 44" fill="none" aria-hidden="true">
+          <circle cx="160" cy="22" r="3.5" fill="currentColor" opacity=".55"/>
+          <circle cx="160" cy="22" r="6.5" stroke="currentColor" stroke-width=".5" opacity=".3"/>
+          <path d="M154 22 C130 17 100 22 70 15 C50 10 28 16 8 22"  stroke="currentColor" stroke-width=".8" fill="none"/>
+          <path d="M166 22 C190 17 220 22 250 15 C270 10 292 16 312 22" stroke="currentColor" stroke-width=".8" fill="none"/>
+          <path d="M90 15 C85 8 88 3 94 5 C99 8 96 14 90 15Z"  fill="currentColor" opacity=".4"/>
+          <path d="M50 18 C44 12 46 6 52 8 C57 11 55 17 50 18Z"  fill="currentColor" opacity=".35"/>
+          <path d="M230 15 C235 8 232 3 226 5 C221 8 224 14 230 15Z" fill="currentColor" opacity=".4"/>
+          <path d="M270 18 C276 12 274 6 268 8 C263 11 265 17 270 18Z" fill="currentColor" opacity=".35"/>
+        </svg>
+
+      </div><!-- end env-wrap -->
 
       <p class="env-hint" id="env-hint">Tap to open your invitation</p>
     </div>
