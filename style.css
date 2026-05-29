@@ -378,7 +378,7 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
    ═══════════════════════════════════════════════════════ */
 #countdown {
   background: var(--white);
-  text-align: center; padding: 5rem 2.5rem;
+  text-align: center; padding: 5rem 1.25rem;
   border-top: 1px solid var(--gold-pale);
   border-bottom: 1px solid var(--gold-pale);
 }
@@ -387,10 +387,10 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
   gap: 0; flex-wrap: nowrap;
 }
 .countdown-group {
-  display: flex; flex-direction: column; align-items: center; gap: .6rem;
-  padding: 0 .3rem;
+  display: flex; flex-direction: column; align-items: center; gap: .55rem;
+  padding: 0 .25rem;
 }
-@media (min-width: 500px) { .countdown-group { padding: 0 .7rem; } }
+@media (min-width: 460px) { .countdown-group { padding: 0 .6rem; } }
 
 /* Gold colon separator between groups */
 .countdown-group:not(:last-child)::after {
@@ -405,17 +405,17 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
 /* Workaround: use a sibling element instead */
 .countdown-sep {
   font-family: var(--ff-display);
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   font-style: italic;
   color: var(--gold-light);
   align-self: flex-end;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.4rem;
   flex-shrink: 0;
   line-height: 1;
-  width: 10px; text-align: center;
+  width: 8px; text-align: center;
 }
 
-.flip-pair { display: flex; gap: 4px; }
+.flip-pair { display: flex; gap: 3px; }
 @media (min-width: 500px) { .flip-pair { gap: 5px; } }
 
 .countdown-label {
@@ -427,23 +427,25 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
 /* ── Single clean digit card ── */
 .flip-digit {
   position: relative;
-  width: 40px; height: 58px;
-  border-radius: 8px;
+  width: 34px; height: 50px;
+  border-radius: 7px;
   border: 1px solid var(--gold-pale);
   background: var(--white);
   box-shadow: 0 2px 14px rgba(44,36,22,.07);
   overflow: hidden;
   flex-shrink: 0;
 }
+@media (min-width: 400px) { .flip-digit { width: 40px; height: 58px; border-radius: 8px; } }
 @media (min-width: 500px) { .flip-digit { width: 52px; height: 72px; border-radius: 10px; } }
 
 .digit-card {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--ff-display);
-  font-size: 2rem; font-weight: 700; font-style: italic;
+  font-size: 1.65rem; font-weight: 700; font-style: italic;
   color: var(--text); line-height: 1;
 }
+@media (min-width: 400px) { .digit-card { font-size: 2rem; } }
 @media (min-width: 500px) { .digit-card { font-size: 2.6rem; } }
 
 /* Slide-up animation on digit change */

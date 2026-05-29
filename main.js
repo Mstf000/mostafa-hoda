@@ -11,7 +11,7 @@ const VENUE_MAP_URL = 'https://maps.google.com/?q=Your+Venue+Here';
 const CITY          = 'City, Country';
 const BOT_TOKEN     = 'YOUR_BOT_TOKEN';
 const CHAT_ID       = 'YOUR_CHAT_ID';
-const START_SEC     = 0;   // seconds into the audio file to begin from
+const START_SEC     = 33;  // seconds into the audio file to begin from
 const QUOTE         = 'And suddenly, all the love songs were about you.';
 const PHOTOS = [
   'public/photo-1.jpg',
