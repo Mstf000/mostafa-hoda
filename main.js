@@ -381,6 +381,11 @@ function initRSVP() {
   ];
 
   btnYes.addEventListener('click', () => {
+    // Hide both buttons immediately
+    document.getElementById('rsvp-buttons').style.display = 'none';
+    taunt.textContent  = 'We cannot wait to celebrate with you!';
+    taunt.style.color  = 'var(--sage-dark)';
+    taunt.style.fontStyle = 'italic';
     burst(['🎉','🥳','💃','🕺','🎊','✨','🌟','💚','🎶'], 200);
   });
 

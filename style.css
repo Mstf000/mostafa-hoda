@@ -643,24 +643,36 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
   min-height: 3.2rem;
 }
 .btn-yes {
-  padding: .9rem 2.4rem;
+  padding: 1rem 2.8rem;
   background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
   color: var(--white); border: none; border-radius: 50px;
-  font-family: var(--ff-label); font-size: .82rem; letter-spacing: .12em;
-  cursor: pointer; box-shadow: 0 4px 18px rgba(201,169,110,.35);
-  transition: opacity .2s, transform .15s;
+  font-family: var(--ff-label); font-size: .82rem; letter-spacing: .14em;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(201,169,110,.4), 0 2px 8px rgba(0,0,0,.1);
+  transition: opacity .2s, transform .15s, box-shadow .2s;
 }
-.btn-yes:hover  { opacity: .9; transform: translateY(-1px); }
+.btn-yes:hover  { opacity: .92; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,169,110,.45); }
 .btn-yes:active { transform: scale(.97); }
 .btn-no {
-  padding: .9rem 2.4rem; background: transparent;
+  padding: 1rem 2.8rem;
+  background: var(--white);
   color: var(--text-light);
-  border: 1.5px solid var(--gold-pale); border-radius: 50px;
-  font-family: var(--ff-label); font-size: .82rem; letter-spacing: .12em;
-  cursor: pointer; transition: border-color .15s, color .15s;
+  border: 1.5px solid var(--gold-light); border-radius: 50px;
+  font-family: var(--ff-label); font-size: .82rem; letter-spacing: .14em;
+  cursor: pointer; transition: border-color .15s, color .15s, box-shadow .15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
-.btn-no:hover { border-color: var(--gold-light); color: var(--text); }
-.btn-no.is-running { position: fixed; z-index: 9999; transition: none !important; }
+.btn-no:hover { border-color: var(--gold); color: var(--text); box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+.btn-no.is-running {
+  position: fixed;
+  z-index: 9999;
+  transition: none !important;
+  /* Solid background so it's always visible regardless of what's behind it */
+  background: var(--white) !important;
+  color: var(--text) !important;
+  border-color: var(--gold-light) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.18), 0 0 0 1px var(--gold-pale);
+}
 .btn-no.is-crying  {
   position: static !important;
   background: #fff8f2; border-color: var(--gold-pale);
