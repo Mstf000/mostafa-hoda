@@ -378,7 +378,7 @@ section { padding: 6rem 1.5rem; overflow: hidden; }
    ═══════════════════════════════════════════════════════ */
 #countdown {
   background: var(--white);
-  text-align: center; padding: 5rem 1rem;
+  text-align: center; padding: 5rem 2.5rem;
   border-top: 1px solid var(--gold-pale);
   border-bottom: 1px solid var(--gold-pale);
 }
